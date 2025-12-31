@@ -6,149 +6,129 @@
 <title>For You ❤️</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(#ffe6f0, #fff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#ffe6f0,#fff);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-
-.screen {
-  display: none;
-  text-align: center;
-  padding: 20px;
+.screen{
+  display:none;
+  text-align:center;
+  padding:20px;
 }
-
-.active {
-  display: block;
+.active{display:block;}
+.emoji{
+  font-size:90px;
+  animation:bounce 1.5s infinite;
+  cursor:pointer;
 }
-
-.emoji {
-  font-size: 90px;
-  animation: bounce 1.5s infinite;
-  cursor: pointer;
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
 }
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+button{
+  margin-top:20px;
+  padding:10px 25px;
+  font-size:16px;
+  border:none;
+  border-radius:25px;
+  background:#ff5c8a;
+  color:white;
+  cursor:pointer;
 }
-
-button {
-  margin-top: 20px;
-  padding: 10px 25px;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
-  background: #ff5c8a;
-  color: white;
-  cursor: pointer;
+.gif{
+  width:260px;
+  border-radius:15px;
 }
-
-.gif {
-  width: 250px;
-  border-radius: 15px;
-}
-
-.mail {
-  background: #fffaf0;
-  border: 2px solid #f5c2d8;
-  border-radius: 15px;
-  padding: 25px;
-  max-width: 300px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: left;
+.mail{
+  background:#fffaf0;
+  border:2px solid #f5c2d8;
+  border-radius:15px;
+  padding:25px;
+  max-width:320px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:left;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Screen 1 -->
+<!-- 1 Gift -->
 <div class="screen active">
   <div class="emoji" onclick="next()">🎁</div>
   <p>Tap to open</p>
 </div>
 
-<!-- Screen 2 -->
+<!-- 2 Our Future Together -->
 <div class="screen">
-  <h2>Our Future Together 💕</h2>
-  <button onclick="next()">START</button>
+  <img class="gif" src="https://share.google/JquGW5FjCP4TzN9fd">
+  <br><button onclick="next()">START</button>
 </div>
 
-<!-- Screen 3 -->
+<!-- 3 Puppy -->
 <div class="screen">
-  <img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+  <img class="gif" src="https://share.google/7ZNP8tQwsKeb6zRqF">
   <br><button onclick="next()">NEXT</button>
 </div>
 
-<!-- Screen 4 -->
+<!-- 4 Gaming -->
 <div class="screen">
-  <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+  <img class="gif" src="https://share.google/bCGQhatFi4YU3KBJ5">
   <br><button onclick="next()">NEXT</button>
 </div>
 
-<!-- Screen 5 -->
+<!-- 5 Cooking -->
 <div class="screen">
-  <img class="gif" src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif">
+  <img class="gif" src="https://share.google/N6uOegdJOerisT7Qe">
   <br><button onclick="next()">NEXT</button>
 </div>
 
-<!-- Screen 6 -->
+<!-- 6 Cuddling -->
 <div class="screen">
-  <img class="gif" src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif">
+  <img class="gif" src="https://share.google/bkbfUze8yK8H67SvV">
   <br><button onclick="next()">NEXT</button>
 </div>
 
-<!-- Screen 7 -->
+<!-- 7 Make it happen -->
 <div class="screen">
   <h2>Let’s make this happen 💖</h2>
   <button onclick="next()">NEXT</button>
 </div>
 
-<!-- Screen 8 -->
+<!-- 8 Mail -->
 <div class="screen">
   <div class="emoji" onclick="next()">📩</div>
   <p>Tap to open</p>
 </div>
 
-<!-- Screen 9 (MAIL) -->
+<!-- 9 Letter -->
 <div class="screen">
   <div class="mail">
     <p>Hope you are doing well,</p>
-
     <p>
       This message is to acknowledge your priceless love and efforts.
       I’ve truly been moved by your generosity and your pure heart.
     </p>
-
     <p>
       I’m happy to inform you that you’ve officially been promoted to
       husband level 😄💍<br>
       I loved your work last year, and I hope you continue the same this year too.
     </p>
-
-    <p>
-      Happy New Year ✨✨
-    </p>
-
-    <p>
-      Regards,<br>
-      Wifey ❤️
-    </p>
-
+    <p>Happy New Year ✨✨</p>
+    <p>Regards,<br>Wifey ❤️</p>
     <button onclick="window.close()">Close</button>
   </div>
 </div>
 
 <script>
-let current = 0;
-const screens = document.querySelectorAll('.screen');
-
-function next() {
+let current=0;
+const screens=document.querySelectorAll('.screen');
+function next(){
   screens[current].classList.remove('active');
   current++;
   screens[current].classList.add('active');
@@ -157,4 +137,3 @@ function next() {
 
 </body>
 </html>
-
